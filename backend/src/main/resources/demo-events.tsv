@@ -1,0 +1,31 @@
+# Synthetic events: minutesAgo, sourceType, severity, category, sourceIp, actor, description
+1435	IDENTITY	LOW	AUTHENTICATION	192.0.2.10	user-104	Successful VPN login from managed device
+1290	ENDPOINT	MEDIUM	ADMIN_ACTION	192.0.2.21	workstation-17	Endpoint policy check completed
+1170	IDENTITY	MEDIUM	AUTHENTICATION	192.0.2.33	user-208	MFA challenge approved for remote sign-in
+1050	ADMIN	HIGH	PRIVILEGE_CHANGE	203.0.113.18	admin-02	Temporary role grant reviewed
+930	IDENTITY	LOW	AUTHENTICATION	192.0.2.41	user-087	Successful web portal login
+810	ENDPOINT	MEDIUM	ADMIN_ACTION	192.0.2.52	workstation-04	Endpoint inventory sync completed
+705	IDENTITY	HIGH	AUTHENTICATION	198.51.100.24	user-142	Failed login attempt for inactive account
+645	IDENTITY	LOW	AUTHENTICATION	192.0.2.63	user-031	Successful VPN login from managed device
+585	ADMIN	MEDIUM	ADMIN_ACTION	203.0.113.35	admin-01	Security group policy updated
+525	ENDPOINT	HIGH	ADMIN_ACTION	192.0.2.76	workstation-22	Endpoint isolation request submitted
+465	IDENTITY	MEDIUM	AUTHENTICATION	198.51.100.24	user-142	MFA challenge rejected for remote sign-in
+405	IDENTITY	LOW	AUTHENTICATION	192.0.2.88	user-192	Successful web portal login
+345	ADMIN	HIGH	PRIVILEGE_CHANGE	203.0.113.42	admin-03	Directory role membership changed
+285	ENDPOINT	MEDIUM	ADMIN_ACTION	192.0.2.94	workstation-09	Endpoint inventory sync completed
+225	IDENTITY	HIGH	AUTHENTICATION	198.51.100.57	user-055	Failed login attempt from unfamiliar device
+180	IDENTITY	LOW	AUTHENTICATION	192.0.2.101	user-066	Successful VPN login from managed device
+145	ADMIN	MEDIUM	ADMIN_ACTION	203.0.113.54	admin-02	Audit export requested by administrator
+115	ENDPOINT	HIGH	ADMIN_ACTION	192.0.2.112	workstation-12	Endpoint isolation request submitted
+90	IDENTITY	MEDIUM	AUTHENTICATION	198.51.100.88	user-243	MFA challenge approved for remote sign-in
+72	IDENTITY	HIGH	AUTHENTICATION	198.51.100.24	user-142	Failed login attempt for privileged account
+54	ADMIN	CRITICAL	PRIVILEGE_CHANGE	203.0.113.77	admin-02	Unexpected administrator role grant detected
+36	IDENTITY	LOW	AUTHENTICATION	192.0.2.123	user-091	Successful web portal login from managed device
+28	IDENTITY	MEDIUM	AUTHENTICATION	198.51.100.24	user-142	MFA challenge rejected after password check
+20	ADMIN	HIGH	ADMIN_ACTION	203.0.113.66	admin-01	Audit export requested by administrator
+9	IDENTITY	HIGH	AUTHENTICATION	198.51.100.42	demo-analyst	Synthetic failed login attempt for analyst account
+8	IDENTITY	HIGH	AUTHENTICATION	198.51.100.42	demo-analyst	Synthetic failed login attempt from remote host
+7	IDENTITY	HIGH	AUTHENTICATION	198.51.100.42	demo-analyst	Synthetic failed login attempt for administrator account
+6	IDENTITY	HIGH	AUTHENTICATION	198.51.100.42	demo-analyst	Synthetic failed login attempt with invalid password
+5	IDENTITY	HIGH	AUTHENTICATION	198.51.100.42	demo-analyst	Synthetic failed login attempt after MFA prompt
+4	IDENTITY	HIGH	AUTHENTICATION	198.51.100.42	demo-analyst	Synthetic successful login following five failed login attempts

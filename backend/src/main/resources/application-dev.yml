@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    username: ${SPRING_DATASOURCE_USERNAME:secureops}
+    password: ${SPRING_DATASOURCE_PASSWORD:secureops}
+server.servlet.session.cookie.secure: false

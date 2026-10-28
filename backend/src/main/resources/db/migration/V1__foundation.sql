@@ -1,0 +1,8 @@
+CREATE TABLE app_user (id BIGSERIAL PRIMARY KEY, email VARCHAR(254) NOT NULL UNIQUE, password_hash VARCHAR(100) NOT NULL, role VARCHAR(20) NOT NULL, enabled BOOLEAN NOT NULL DEFAULT TRUE);
+CREATE TABLE security_event (id UUID PRIMARY KEY, occurred_at TIMESTAMPTZ NOT NULL, source_type VARCHAR(40) NOT NULL, severity VARCHAR(20) NOT NULL, category VARCHAR(60) NOT NULL, source_ip VARCHAR(45), actor VARCHAR(80), description VARCHAR(500) NOT NULL, detected BOOLEAN NOT NULL DEFAULT FALSE);
+CREATE INDEX ix_event_time ON security_event(occurred_at DESC);
+CREATE INDEX ix_event_category ON security_event(category);
+CREATE TABLE alert (id UUID PRIMARY KEY, title VARCHAR(180) NOT NULL, rule_key VARCHAR(80) NOT NULL, severity VARCHAR(20) NOT NULL, status VARCHAR(24) NOT NULL, description VARCHAR(1000) NOT NULL, event_id UUID REFERENCES security_event(id), assignee VARCHAR(254), created_at TIMESTAMPTZ NOT NULL, updated_at TIMESTAMPTZ NOT NULL);
+CREATE TABLE incident (id UUID PRIMARY KEY, title VARCHAR(180) NOT NULL, severity VARCHAR(20) NOT NULL, status VARCHAR(24) NOT NULL, assignee VARCHAR(254), created_at TIMESTAMPTZ NOT NULL, updated_at TIMESTAMPTZ NOT NULL, summary VARCHAR(2000));
+CREATE TABLE incident_alert (incident_id UUID NOT NULL REFERENCES incident(id), alert_id UUID NOT NULL REFERENCES alert(id), PRIMARY KEY(incident_id, alert_id));
+CREATE TABLE audit_entry (id BIGSERIAL PRIMARY KEY, action VARCHAR(100) NOT NULL, actor VARCHAR(254) NOT NULL, subject_id VARCHAR(80), details VARCHAR(1000), occurred_at TIMESTAMPTZ NOT NULL);

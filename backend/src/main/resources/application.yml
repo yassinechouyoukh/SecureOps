@@ -1,0 +1,18 @@
+server:
+  port: 8080
+  forward-headers-strategy: framework
+  servlet.session.cookie:
+    http-only: true
+    same-site: lax
+    secure: ${SERVER_SERVLET_SESSION_COOKIE_SECURE:true}
+spring:
+  application.name: secureops
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/secureops}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  flyway.enabled: true
+  servlet.multipart.max-request-size: 1MB
+  jackson.default-property-inclusion: non_null
+management.endpoints.web.exposure.include: health,info
+springdoc.swagger-ui.path: /swagger-ui.html
